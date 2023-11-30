@@ -21,10 +21,10 @@ public class Restaurant {
     @Id
     private Long id;
 
-    @Column
+    @Column(length = 180, nullable = false)
     private String name;
 
-    @Column(name= "tax_delivery")
+    @Column(name= "tax_delivery", scale= 2)
     private BigDecimal taxDelivery;
 
 

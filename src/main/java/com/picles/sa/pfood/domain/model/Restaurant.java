@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -25,6 +26,7 @@ public class Restaurant {
     private String name;
 
     @Column(name= "tax_delivery", scale= 2)
+    @NotNull(message = "We need to define the value, zero(0.00) or a value like 0.01, 9.99")
     private BigDecimal taxDelivery;
 
 

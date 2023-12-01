@@ -1,10 +1,7 @@
 package com.picles.sa.pfood.domain.model;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import jakarta.validation.*;
@@ -23,6 +20,10 @@ import jakarta.validation.*;
 public class Kitchen {
 
     @Id
+    @SequenceGenerator(name="seq_kitchen",
+            sequenceName="seq_kitchen",
+            allocationSize=1)
+    @GeneratedValue(generator="seq_kitchen",strategy=GenerationType.SEQUENCE)
     private Long id;
 
     @Column(length = 30)
